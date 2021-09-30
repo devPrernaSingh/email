@@ -1,0 +1,19 @@
+
+
+.navbar-collapse {
+    flex-grow: 0 !important;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 20px !important;
+    height: 20px !important;
+    
+}
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+    flex-wrap: nowrap !important;
+}

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background:white;
+}
+
+.email_container{
+    
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 100px;
+    min-width: 200px;
+    max-width: 700px;
+}
+.email_heading, .email_submit{
+    background-color: #294c6f;
+}
+
+.emailbox {
+    color: #888;
+    margin-top: 40px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.email_field{
+    width: 100%;
+    padding-left: 20px;
+    outline: none;
+    background: transparent;
+}
+
+.email_submit{
+
+    border: none;
+    color: white;
+    min-width: 150px;
+    max-width: 200px;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+::placeholder{
+    padding-left: 0px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.emailbox::-webkit-scrollbar {
+    width: 10px;
+  }
+   
+  .emailbox::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  }
+   
+  .emailbox::-webkit-scrollbar-thumb {
+    background-color: #294c6f;
+    /* outline: 0px solid slategrey; */
+  }
+
+
+  input[type="radio" i] {
+    cursor: default;
+    appearance: auto;
+    padding: initial;
+    border: initial;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    background-color: #294c6f;
+
+}
+
+.errorMessage{
+    color: red;
+    font-size: 12px;
+    font-family: "Poppins";
+}
