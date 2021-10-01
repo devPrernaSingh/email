@@ -21,7 +21,7 @@ class Login extends Component {
 
     otpHandler = () => {
         const emailCheck = /[A-Za-z._0-9]{3,}@[A-za-z]{3,}[.]{1}[A-Za-z.]{2,6}/;
-        let  { email, otp } = this.state.formValues; 
+        let  { email } = this.state.formValues; 
         this.setState({ isEmailRegistered: false})
         if(emailCheck.test(email)){
             const requestOptions = {
@@ -32,16 +32,11 @@ class Login extends Component {
             
             fetch('https://staging.vyaparapp.in/api/ns/auth/check-user', requestOptions)
                 .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    
-
+                .then(data => {                  
                     if(data.statusCode === 200){
-                        console.log('Here')
                         this.setState({ isEmailRegistered: true})
                     }
-                }
-                    )
+                })
                 .catch(error => console.log(error))
         }
     }
@@ -49,9 +44,6 @@ class Login extends Component {
     verifyOtp = () => {
 
         let  { email,otp, } = this.state.formValues;
-        
-        console.log('email: ',email)
-
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
@@ -65,9 +57,7 @@ class Login extends Component {
             .then(response => response.json())
             .then(data => {
                 let auth_token = data.auth_token;
-                console.log('Data',data,auth_token);
                 if(data.statusCode === 200){
-                    console.log('Data is : ',data.data);
                     document.cookie = `auth_token = ${data.data.auth_token}`;
                     window.location.href = '/email'
                 }
@@ -77,9 +67,7 @@ class Login extends Component {
 
  
     render() {
-        const { email, otp } = this.state.formValues;
         let { isEmailRegistered } = this.state;
-        console.log('isEmailRegistered', isEmailRegistered);
         return (
             <div className='login_bucket text-center d-block justify-content-center mt-5 pt-5' >
                 <div>
@@ -94,7 +82,7 @@ class Login extends Component {
                 { !isEmailRegistered ? (
                     <div id='userEmailId'>
                         <div className="textbox d-flex mx-auto"> 
-                            <FontAwesomeIcon icon={faUser}  style={{fontSize:'9x'},{marginTop:'15px'}} className='userIcon' id='elementID'/>
+                            <FontAwesomeIcon icon={faUser} className='iconStyle userIcon' id='elementID'/>
                             <input type="email" placeholder='Email' name="email" className='border-0 input_field' onChange={this.handleForm} autoFocus={true} />
                         </div>
             
@@ -103,7 +91,7 @@ class Login extends Component {
                 ):
                     <div id='otpContainr'>
                         <div className="textbox d-flex bg-white mx-auto"> 
-                            <FontAwesomeIcon icon={faLock}  style={{fontSize:'9x'},{marginTop:'15px'}} className='passIcon'/>
+                            <FontAwesomeIcon icon={faLock} className='iconStyle passIcon'/>
                             <input type="password" placeholder='OTP' onChange={this.handleForm} name='otp' className='border-0 input_field'  />
                         </div>
                         

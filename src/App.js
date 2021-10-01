@@ -6,7 +6,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-
+import PrivateRoute from './common/components/privateRote'
 
 function App() {
   return (
@@ -15,9 +15,7 @@ function App() {
         <Route exact path='/'>
           <Login />
         </Route>
-        <Route path='/email'>
-          <Email />
-        </Route>
+        <PrivateRoute component={Email} path="/email" exact />
       </Switch>
     </Router>
   );

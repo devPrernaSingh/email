@@ -13,6 +13,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.iconStyle{
+    font-size:9px;
+    margin-top:15px;
+}
+
 .input_field{
     padding-left: 20px;
     outline: none;
@@ -47,6 +52,7 @@ button:focus {
 .userIcon , .passIcon {
     color: rgb(145, 145, 145);
     text-shadow: 1px 1px 1px #ccc;   
+    font-size: 20px;
 }
 
 .authCheck, .sendOtpButton{

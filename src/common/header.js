@@ -7,30 +7,29 @@ function Header() {
   const[detectRoute, setRoute ] = useState(false);
 
 
-//   function getCookiesMap(cookiesString) {
-//     return cookiesString.split(";")
-//       .map(function(cookieString) {
-//           return cookieString.trim().split("=");
-//       })
-//       .reduce(function(acc, curr) {
-//           acc[curr[0]] = curr[1];
-//           return acc;
-//       }, {});
-//   }
+  function getCookiesMap(cookiesString) {
+    return cookiesString.split(";")
+      .map(function(cookieString) {
+          return cookieString.trim().split("=");
+      })
+      .reduce(function(acc, curr) {
+          acc[curr[0]] = curr[1];
+          return acc;
+      }, {});
+  }
 
 
-//   useEffect(() => {
-//     var cookies = getCookiesMap(document.cookie);
-//     var cookieValue = cookies["auth_token"];
-//     console.log('cookieValue : ',cookieValue);
+  useEffect(() => {
+    var cookies = getCookiesMap(document.cookie);
+    var cookieValue = cookies["auth_token"];
 
-//     if(cookieValue){
-//       setRoute({
-//         detectRoute: true,
-//       }) 
-//     }
+    if(cookieValue){
+      setRoute({
+        detectRoute: true,
+      }) 
+    }
 
-//   },detectRoute);
+  },[]);
 
 
 const logoutHandler = () => {

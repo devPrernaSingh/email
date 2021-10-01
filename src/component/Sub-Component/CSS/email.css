@@ -38,7 +38,7 @@ body{
     color: white;
     min-width: 150px;
     max-width: 200px;
-    margin-left: 1em;
+    margin-left: 10px !important;
     margin-bottom: 1em;
 }
 
@@ -77,4 +77,21 @@ body{
     color: red;
     font-size: 12px;
     font-family: "Poppins";
+    margin-left: 20px !important;
+}
+.textField{
+    min-height:200px;
+    max-height:250px;
+    overflow-y:scroll;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0px !important;
+    /* margin-top: 5px !important; */
+    margin-right: 10px !important;  
+}
+.margintop{
+    margin-top: 5px !important;
 }
