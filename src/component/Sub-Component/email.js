@@ -7,6 +7,7 @@ import './CSS/email.css';
 const Email = () => {
 
     const [emailValues, setEmailValues] = useState({});
+    
     const [isReply, setIsReply] = useState(false);
     const [hasHtmlContent, setHasHtmlContent]  = useState(false);
 
@@ -16,8 +17,6 @@ const Email = () => {
     const [validName, setValidName] = useState(true);
 
     const [validContent, setValidContent] = useState(true);
-    // const [validFrom, setValidFromId] = useState(false);
-    // const [isReply, setReply ] = useState(false);
 
     const fieldHandler = (event) => {
         const {name,value} = event.target;
@@ -116,7 +115,7 @@ const Email = () => {
                 })
                 .then(data => {
                     if(data.statusCode === 200){
-                        console.log('Here');
+                        console.log('');
                     }
                 })
                 .catch(error => console.log(error))
